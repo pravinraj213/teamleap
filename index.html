@@ -6,8 +6,8 @@
     <title>TeamLeap - Find your people. Build your future.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <style>
         :root {
             --primary: #6366F1;
@@ -65,6 +65,7 @@
         }
 
         body {
+            font-family: 'Poppins', 'Inter', sans-serif;
             color: var(--text);
             line-height: 1.6;
             background-color: var(--color-white);
@@ -755,28 +756,6 @@
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2 class="section-title">Want to connect?</h2>
-                <p>Whether you’re curious about TeamLeap, want to give feedback, or just want to say hi — drop your message below. I read everything personally.</p>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-field-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Your Name">
-                    </div>
-                    <div class="form-field-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your College Email (Optional but preferred)">
-                    </div>
-                    <div class="form-field-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="What do you want to say?"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            Send Message
-                        </button>
-                        <p class="submit-disclaimer">
-                            I’m currently a solo builder, so replies might take a little time. But I read everything — and if you’re serious, I’ll definitely respond.
-                        </p>
-                    </div>
                 </form>
             </div>
         </section>
@@ -823,5 +802,32 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Show popup if redirected with ?sent=1
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.location.search.includes('sent=1')) {
+                alert('Message sent! Thank you for reaching out.');
+                // Optionally, remove the query param from the URL
+                if (window.history.replaceState) {
+                    const url = window.location.origin + window.location.pathname;
+                    window.history.replaceState({}, document.title, url);
+                }
+            }
+
+            // Auto-close mobile nav on link click
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuButton = document.getElementById('mobile-menu-button');
+            if (mobileMenu && menuButton) {
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth < 769 && mobileMenu.classList.contains('open')) {
+                            mobileMenu.classList.remove('open');
+                            menuButton.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
