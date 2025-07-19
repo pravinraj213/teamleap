@@ -721,6 +721,66 @@
                 text-align: center;
             }
         }
+        /* Stats Section */
+        .stats-section {
+            background: #fff;
+            padding-top: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1.5px solid #e5e7eb;
+        }
+        .stats-grid {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: var(--color-bg-light);
+            border-radius: 18px;
+            box-shadow: 0 2px 12px 0 rgba(99,102,241,0.06);
+            padding: 32px 24px;
+            min-width: 220px;
+            max-width: 320px;
+            flex: 1 1 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .stat-emoji {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+        .stat-desc {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .stat-source {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        @media (max-width: 900px) {
+            .stats-grid {
+                flex-direction: column;
+                gap: 18px;
+                align-items: stretch;
+            }
+            .stat-card {
+                max-width: 100%;
+            }
+        }
+        section:nth-of-type(even):not(.hero):not(.stats-section) {
+            background: #f8fafc;
+        }
     </style>
 </head>
 <body>
@@ -824,6 +884,32 @@
                 </div>
                 <p style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--color-gray-dark); margin-top: 50px; text-align: center;">The real goal? Help you feel less alone — and more capable — in your journey through college.</p>
             </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="stats-section">
+          <div class="container">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-emoji">🔍</div>
+                <div class="stat-value">68%</div>
+                <div class="stat-desc">of students say finding a good team is harder than the project itself.</div>
+                <div class="stat-source">LinkedIn Student Voices Survey, 2023</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-emoji">💼</div>
+                <div class="stat-value">72%</div>
+                <div class="stat-desc">of college group projects suffer from poor coordination and unclear roles.</div>
+                <div class="stat-source">Project Management Institute, 2022 Student Research</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-emoji">👥</div>
+                <div class="stat-value">5+</div>
+                <div class="stat-desc">Students often participate in 5+ events or projects without a consistent team.</div>
+                <div class="stat-source">Devfolio Hackathon Trends Report, 2023</div>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="whats-next" class="whats-next-section">
