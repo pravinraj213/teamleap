@@ -354,19 +354,23 @@
             line-height: 1.1;
             letter-spacing: -0.01em;
             text-align: center;
-            color: #fff; /* Make the headline white */
-            background: none; /* Remove gradient text if present */
+            background: linear-gradient(90deg, #1e3a8a 30%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             animation: heroFadeIn 1.2s cubic-bezier(.4,0,.2,1);
             opacity: 0;
             transform: scale(0.95);
             animation-fill-mode: forwards;
         }
+        @keyframes heroFadeIn {
+            from { opacity: 0; transform: scale(0.95);}
+            to { opacity: 1; transform: scale(1);}
+        }
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2.2rem !important;
                 margin-bottom: 18px;
-                color: #fff !important;
-                background: none !important;
             }
         }
         .hero p {
