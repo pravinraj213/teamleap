@@ -207,6 +207,21 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding-left: 18px !important;
+                padding-right: 18px !important;
+                padding-top: 0;
+                padding-bottom: 0;
+                box-sizing: border-box;
+            }
+            section {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .contact-form {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
             .navbar-links {
                 display: none;
             }
@@ -237,16 +252,27 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--secondary) 0%, var(--light) 100%);
-            text-align: center;
-            min-height: 70vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            padding-top: calc(var(--section-gap) + 40px);
-            padding-bottom: var(--section-gap);
+            padding-top: 72px; /* Height of navbar to prevent overlap */
+            padding-bottom: 0;
             position: relative;
             animation: fadeInUp 0.8s cubic-bezier(.4,0,.2,1);
+        }
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 72px);
+            height: auto;
+            text-align: center;
+            /* Remove margin and padding that may offset vertical centering */
+            margin: 0;
+            padding: 0;
         }
         .hero h1 {
             font-size: 3.5rem;           /* Larger than other headings */
@@ -255,7 +281,6 @@
             margin-bottom: 28px;
             line-height: 1.1;
             letter-spacing: -0.01em;
-            animation: fadeInDown 1s cubic-bezier(.4,0,.2,1);
             /* Typewriter effect for desktop */
             overflow: hidden;
             white-space: nowrap;
@@ -264,6 +289,7 @@
             animation:
                 typing 2.2s steps(40, end) 0.2s forwards,
                 blink-caret 0.75s step-end infinite;
+            animation-fill-mode: forwards;
         }
         @keyframes typing {
             from { width: 0 }
@@ -634,7 +660,19 @@
         }
         @media (max-width: 768px) {
             .container {
-                padding: 0 10px;
+                padding-left: 18px !important;
+                padding-right: 18px !important;
+                padding-top: 0;
+                padding-bottom: 0;
+                box-sizing: border-box;
+            }
+            section {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .contact-form {
+                padding-left: 10px;
+                padding-right: 10px;
             }
             .hero h1 {
                 font-size: 2.2rem !important;
@@ -836,8 +874,7 @@
                     <h3>Connect</h3>
                     <ul>
                         <li><a href="https://github.com/pravinraj213" target="_blank" rel="noopener">GitHub</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                        <li><a href="#">Twitter</a></li>
+                        <li><a href="https://linkedin.com/in/pravinraj213" target="_blank" rel="noopener">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
