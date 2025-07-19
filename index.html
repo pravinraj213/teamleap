@@ -249,13 +249,41 @@
             animation: fadeInUp 0.8s cubic-bezier(.4,0,.2,1);
         }
         .hero h1 {
-            font-size: var(--font-size-5xl);
+            font-size: 3.5rem;           /* Larger than other headings */
             font-weight: 900;
-            color: var(--primary-dark);
+            color: #111;                 /* Pure black */
             margin-bottom: 28px;
             line-height: 1.1;
             letter-spacing: -0.01em;
             animation: fadeInDown 1s cubic-bezier(.4,0,.2,1);
+            /* Typewriter effect for desktop */
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid var(--primary-dark);
+            width: 0;
+            animation:
+                typing 2.2s steps(40, end) 0.2s forwards,
+                blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            0%, 100% { border-color: transparent }
+            50% { border-color: var(--primary-dark); }
+        }
+        /* Remove typewriter on mobile for readability */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem !important;
+                color: #111 !important;
+                width: 100% !important;
+                overflow: visible !important;
+                white-space: normal !important;
+                border-right: none !important;
+                animation: fadeInDown 1s cubic-bezier(.4,0,.2,1) !important;
+            }
         }
         .hero p {
             font-size: var(--font-size-xl);
@@ -609,7 +637,13 @@
                 padding: 0 10px;
             }
             .hero h1 {
-                font-size: var(--font-size-3xl);
+                font-size: 2.2rem !important;
+                color: #111 !important;
+                width: 100% !important;
+                overflow: visible !important;
+                white-space: normal !important;
+                border-right: none !important;
+                animation: fadeInDown 1s cubic-bezier(.4,0,.2,1) !important;
             }
             .section-title {
                 font-size: var(--font-size-2xl);
@@ -684,9 +718,6 @@
                         <p>That’s when I realized: students like me don’t need a flashy network — we need a <strong>trustworthy one.</strong></p>
                         <p><strong>TeamLeap</strong> was born from that frustration. It’s not about resumes. It’s about finding teammates who are <strong>dependable, communicative, and aligned in mindset.</strong> Because even one good teammate can change your college life — and your confidence.</p>
                     </div>
-                    <div class="problem-image">
-                        <!-- You can add an illustration or image here if needed -->
-                    </div>
                 </div>
             </div>
         </section>
@@ -756,6 +787,21 @@
         <section id="contact" class="contact-section">
             <div class="container">
                 <h2 class="section-title">Want to connect?</h2>
+                <form action="https://formsubmit.co/pravinraj213@gmail.com" method="POST" class="contact-form">
+                    <div class="form-field-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-field-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    <div class="submit-disclaimer">We respect your privacy. Your information is safe and will never be shared.</div>
                 </form>
             </div>
         </section>
