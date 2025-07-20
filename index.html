@@ -159,6 +159,7 @@
             color: var(--primary); /* Text on primary button becomes black */
             border: none;
             box-shadow: var(--shadow-md);
+            border-radius: 100px;
         }
 
         .btn-primary:hover, .btn-primary:focus {
@@ -173,6 +174,7 @@
             color: var(--dark); /* Text on secondary button becomes off-white */
             border: 2px solid var(--dark); /* Border becomes off-white */
             box-shadow: none;
+            border-radius: 100px;
         }
 
         .btn-secondary:hover, .btn-secondary:focus {
@@ -424,6 +426,7 @@
         }
 
         .scroll-indicator {
+            visibility: hidden;
             position: absolute;
             bottom: var(--spacing-8);
             left: 50%;
@@ -433,10 +436,11 @@
             align-items: center;
             color: var(--text-light); /* Muted for dark theme */
             font-size: var(--font-size-sm);
-            animation: bounce 2s infinite;
+            animation: bounce 1.5s infinite;
         }
 
         .scroll-indicator i {
+            visibility: inherit;
             font-size: var(--font-size-2xl);
             margin-top: var(--spacing-2);
         }
@@ -1034,7 +1038,7 @@
                     <p>Easily find peers with complementary skills, whether it's coding, design, research, or writing.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-users-line"></i></div>
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
                     <h3 class="feature-title">Value Team Dynamics</h3>
                     <p>Go beyond skills; find teammates whose work ethic and communication style align with yours.</p>
                 </div>
